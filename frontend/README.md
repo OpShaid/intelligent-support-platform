@@ -372,7 +372,7 @@ npm i -g vercel
 # Deploy
 vercel
 
-# Set environment variables in Vercel dashboard
+
 ```
 
 ### Docker
@@ -488,6 +488,4 @@ npm run build
 4. **Add Analytics Charts** - Integrate Recharts
 5. **Deploy to Vercel** - Get it live!
 
----
-
-**Frontend is production-ready! Start building amazing experiences.** 🚀
+--
