@@ -2,21 +2,6 @@
 
 > **An enterprise-grade automated customer support system that uses N8N, OpenAI, and Supabase to intelligently triage, route, and respond to customer inquiries at scale.**
 
----
-
-## 📖 Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Why This Project Stands Out](#why-this-stands-out)
-3. [System Architecture](#system-architecture)
-4. [N8N Workflow Design](#n8n-workflow-design)
-5. [AI Logic & OpenAI Integration](#ai-logic--openai-integration)
-6. [Database Schema](#database-schema)
-7. [Step-by-Step Build Plan](#step-by-step-build-plan)
-8. [Stretch Goals](#stretch-goals)
-9. [Portfolio Deliverables](#portfolio-deliverables)
-
----
 
 ## 🚀 Project Overview
 
