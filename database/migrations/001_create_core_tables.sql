@@ -1,12 +1,6 @@
--- Migration 001: Create Core Tables
--- Run this first in Supabase SQL Editor
 
--- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
--- ============================================================================
--- CORE TABLES
--- ============================================================================
 
 -- Teams Table
 CREATE TABLE teams (
@@ -288,9 +282,7 @@ CREATE TABLE analytics_daily (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- ============================================================================
--- INDEXES
--- ============================================================================
+
 
 -- Tickets indexes
 CREATE INDEX idx_tickets_status ON tickets(status) WHERE status NOT IN ('resolved', 'closed', 'spam');
@@ -344,9 +336,7 @@ CREATE INDEX idx_error_logs_ticket_id ON error_logs(ticket_id) WHERE ticket_id I
 -- Analytics indexes
 CREATE INDEX idx_analytics_daily_date ON analytics_daily(date DESC);
 
--- ============================================================================
--- FUNCTIONS & TRIGGERS
--- ============================================================================
+
 
 -- Auto-update timestamp function
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -379,9 +369,7 @@ CREATE TRIGGER update_sla_tracking_updated_at BEFORE UPDATE ON sla_tracking
 CREATE TRIGGER update_analytics_daily_updated_at BEFORE UPDATE ON analytics_daily
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
--- ============================================================================
--- VIEWS
--- ============================================================================
+
 
 -- Active tickets with analysis
 CREATE VIEW active_tickets_view AS
