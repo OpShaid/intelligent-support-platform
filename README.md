@@ -1,4 +1,4 @@
-# 🎯 AI-Powered Support Intelligence Platform
+# 🎯 Support Intelligence Platform (ISTS)
 
 > **An enterprise-grade automated customer support system that uses N8N, OpenAI, and Supabase to intelligently triage, route, and respond to customer inquiries at scale.**
 
