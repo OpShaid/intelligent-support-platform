@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Setup Script for Intelligent Support Triage System
-# This script helps you set up the project step by step
+
 
 set -e
 
