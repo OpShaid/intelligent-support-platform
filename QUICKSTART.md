@@ -360,5 +360,3 @@ You now have a working AI-powered support system!
 - OpenAI API reference: [platform.openai.com/docs](https://platform.openai.com/docs)
 
 ---
-
-**You're ready to build something amazing! 🚀**
