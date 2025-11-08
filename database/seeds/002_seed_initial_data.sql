@@ -1,9 +1,4 @@
--- Seed Data: Initial Setup
--- Run this after creating tables
 
--- ============================================================================
--- TEAMS
--- ============================================================================
 
 INSERT INTO teams (name, description, handles_categories, slack_channel_name) VALUES
   ('Billing Team', 'Handles all billing, payments, refunds, and subscription issues',
@@ -15,9 +10,6 @@ INSERT INTO teams (name, description, handles_categories, slack_channel_name) VA
   ('General Support', 'Handles general questions and unclassified tickets',
    ARRAY['general'], '#support-general');
 
--- ============================================================================
--- AGENTS
--- ============================================================================
 
 -- Billing Team Agents
 INSERT INTO agents (name, email, team_id, role, skill_level, specializations, max_concurrent_tickets, is_available)
@@ -84,19 +76,15 @@ SELECT
   (SELECT id FROM teams WHERE name = 'General Support'),
   'manager', 'expert', ARRAY['billing', 'technical', 'account', 'general'], 20, true;
 
--- ============================================================================
--- SLA CONFIGURATIONS
--- ============================================================================
+
 
 INSERT INTO sla_configurations (name, priority, first_response_target, resolution_target, business_hours_only, is_active) VALUES
-  ('Urgent Priority SLA', 'urgent', 60, 240, false, true),     -- 1 hour response, 4 hour resolution
-  ('High Priority SLA', 'high', 240, 480, false, true),        -- 4 hour response, 8 hour resolution
-  ('Medium Priority SLA', 'medium', 480, 1440, true, true),    -- 8 hour response, 24 hour resolution (business hours)
-  ('Low Priority SLA', 'low', 1440, 4320, true, true);         -- 24 hour response, 72 hour resolution (business hours)
+  ('Urgent Priority SLA', 'urgent', 60, 240, false, true),     
+  ('High Priority SLA', 'high', 240, 480, false, true),       
+  ('Medium Priority SLA', 'medium', 480, 1440, true, true),    
+  ('Low Priority SLA', 'low', 1440, 4320, true, true);        
 
--- ============================================================================
--- ROUTING RULES
--- ============================================================================
+
 
 -- Urgent routing (highest priority)
 INSERT INTO routing_rules (name, description, category, priority, team_id, rule_priority, is_active)
@@ -175,11 +163,7 @@ SELECT
   999,
   true;
 
--- ============================================================================
--- VERIFICATION QUERIES
--- ============================================================================
 
--- Check teams
 SELECT 'Teams created:' as status, COUNT(*) as count FROM teams;
 SELECT name, handles_categories FROM teams;
 
