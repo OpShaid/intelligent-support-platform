@@ -924,10 +924,6 @@ Common issues:
 
 ---
 
-## 📄 License
+.
 
-MIT License - Free to use in your portfolio and adapt for projects.
 
----
-
-**Built to demonstrate production-ready AI automation engineering. Good luck with your portfolio!**
