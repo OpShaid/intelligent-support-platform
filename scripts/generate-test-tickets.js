@@ -1,15 +1,6 @@
 #!/usr/bin/env node
 
-/**
- * Test Ticket Generator
- * Generates realistic test tickets for the Support Intelligence Platform
- *
- * Usage:
- *   node generate-test-tickets.js [count]
- *
- * Example:
- *   node generate-test-tickets.js 50
- */
+
 
 const crypto = require('crypto');
 
