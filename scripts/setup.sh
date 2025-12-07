@@ -12,22 +12,22 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}"
 cat << "EOF"
-╔════════════════════════════════════════════════════════════╗
-║   Intelligent Support Triage System - Setup Script        ║
-║   AI-Powered Customer Support Automation                  ║
-╚════════════════════════════════════════════════════════════╝
+
+║Intelligent Support Triage System - Setup Script        
+  AI-Powered Customer Support Automation                  
+
 EOF
 echo -e "${NC}"
 
-# Check if running from project root
+
 if [ ! -f "README.md" ]; then
     echo -e "${RED}Error: Please run this script from the project root directory${NC}"
     exit 1
 fi
 
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
 echo -e "${GREEN}Step 1: Prerequisites Check${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+
 
 # Check for Node.js
 if command -v node &> /dev/null; then
@@ -54,9 +54,9 @@ else
 fi
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
 echo -e "${GREEN}Step 2: Environment Configuration${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+
 
 if [ ! -f ".env" ]; then
     echo -e "${YELLOW}Creating .env file from template...${NC}"
@@ -82,15 +82,12 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
-# Load environment variables
 if [ -f ".env" ]; then
     export $(cat .env | grep -v '^#' | xargs)
 fi
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}Step 3: Database Setup${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
 echo "Choose your database setup method:"
 echo "  1. Supabase (Web Interface) - Recommended"
@@ -149,9 +146,7 @@ case $db_choice in
 esac
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}Step 4: Generate Test Data${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
 read -p "Generate test tickets? (y/n) " -n 1 -r
 echo
@@ -170,9 +165,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}Step 5: N8N Setup${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
 echo "Choose your N8N setup:"
 echo "  1. N8N Cloud (Easiest)"
@@ -222,9 +215,7 @@ case $n8n_choice in
 esac
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}Setup Complete!${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
 echo -e "${GREEN}✓ Database schema created${NC}"
 echo -e "${GREEN}✓ Initial data seeded${NC}"
