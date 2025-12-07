@@ -4,12 +4,12 @@
 
 const crypto = require('crypto');
 
-// Sample data
+
 const firstNames = ['John', 'Sarah', 'Mike', 'Emily', 'David', 'Jessica', 'Carlos', 'Lisa', 'Tom', 'Rachel', 'Alex', 'Jennifer', 'Ryan', 'Amanda', 'Kevin'];
 const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Wilson', 'Anderson', 'Taylor'];
 const domains = ['gmail.com', 'outlook.com', 'yahoo.com', 'company.com', 'business.co', 'startup.io', 'enterprise.com'];
 
-// Ticket templates by category
+
 const ticketTemplates = {
   billing: [
     {
