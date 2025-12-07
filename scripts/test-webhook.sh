@@ -6,16 +6,15 @@ BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${BLUE}   Test Webhook - Send Sample Ticket${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
-# Load .env if exists
+echo -e "${BLUE}   Test Webhook - Send Sample Ticket${NC}"
+
+
+
 if [ -f ".env" ]; then
     export $(cat .env | grep -v '^#' | grep N8N_WEBHOOK_URL | xargs)
 fi
 
-# Get webhook URL
 if [ -z "$N8N_WEBHOOK_URL" ]; then
     read -p "Enter your N8N webhook URL: " WEBHOOK_URL
 else
@@ -127,4 +126,4 @@ else
 fi
 
 echo ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
